@@ -17,16 +17,16 @@ namespace MovieLibrary.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Movies
-        public IQueryable<Movie> GetMovie()
+        public IQueryable<Movies> GetMovie()
         {
-            return db.Movie;
+            return db.Movies;
         }
 
         // GET: api/Movies/5
-        [ResponseType(typeof(Movie))]
+        [ResponseType(typeof(Movies))]
         public IHttpActionResult GetMovie(int id)
         {
-            Movie movie = db.Movie.Find(id);
+            Movies movie = db.Movies.Find(id);
             if (movie == null)
             {
                 return NotFound();
@@ -37,7 +37,7 @@ namespace MovieLibrary.Controllers
 
         // PUT: api/Movies/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutMovie(int id, Movie movie)
+        public IHttpActionResult PutMovie(int id, Movies movie)
         {
             if (!ModelState.IsValid)
             {
@@ -71,31 +71,31 @@ namespace MovieLibrary.Controllers
         }
 
         // POST: api/Movies
-        [ResponseType(typeof(Movie))]
-        public IHttpActionResult PostMovie(Movie movie)
+        [ResponseType(typeof(Movies))]
+        public IHttpActionResult PostMovie(Movies movie)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Movie.Add(movie);
+            db.Movies.Add(movie);
             db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = movie.Id }, movie);
         }
 
         // DELETE: api/Movies/5
-        [ResponseType(typeof(Movie))]
+        [ResponseType(typeof(Movies))]
         public IHttpActionResult DeleteMovie(int id)
         {
-            Movie movie = db.Movie.Find(id);
+            Movies movie = db.Movies.Find(id);
             if (movie == null)
             {
                 return NotFound();
             }
 
-            db.Movie.Remove(movie);
+            db.Movies.Remove(movie);
             db.SaveChanges();
 
             return Ok(movie);
@@ -112,7 +112,7 @@ namespace MovieLibrary.Controllers
 
         private bool MovieExists(int id)
         {
-            return db.Movie.Count(e => e.Id == id) > 0;
+            return db.Movies.Count(e => e.Id == id) > 0;
         }
     }
 }

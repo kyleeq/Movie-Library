@@ -21,7 +21,7 @@ namespace MovieLibrary.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<Movie> Movie { get; set; }
+        public DbSet<Movies> Movies { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
