@@ -19,3 +19,22 @@ function createJSON(title, genre, directorName) {
             return status;
         })
 }
+
+function updateJSON(title, genre, directorName) {
+    $.ajax({
+        url: "http://localhost:49206/api/movies",
+        type: 'PUT',
+        success: function ()
+        {
+            return "Success";
+        },
+        data:
+        {
+            Title: title,
+            Genre: genre,
+            DirectorName: directorName
+        },
+        contentType: type
+    });
+}
+
