@@ -119,16 +119,5 @@ namespace MovieLibrary.Controllers
         {
             return db.Movies.Count(e => e.Id == id) > 0;
         }
-
-        //public string GetMovieByTitle(int id)
-        //{
-            //var movie = db.Movies.Where(m => m.Id == id).FirstOrDefault();
-            //return movie;
-        //}
-
-        //public string GetMovieByGenre(int id)
-        //{
-
-        //}
     }
 }

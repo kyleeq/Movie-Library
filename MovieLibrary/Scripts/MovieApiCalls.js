@@ -20,7 +20,7 @@ function createJSON(title, genre, directorName) {
         })
 }
 
-function updateJSON(title, genre, directorName) {
+function updateJSON(id, title, genre, directorName) {
     $.ajax({
         url: "http://localhost:49206/api/movies",
         type: 'PUT',
@@ -30,6 +30,7 @@ function updateJSON(title, genre, directorName) {
         },
         data:
         {
+            Id: id;
             Title: title,
             Genre: genre,
             DirectorName: directorName
