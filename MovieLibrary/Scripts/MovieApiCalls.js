@@ -38,3 +38,19 @@ function updateJSON(title, genre, directorName) {
     });
 }
 
+function deleteJSON(title, genre, directorName) {
+    $.ajax({
+        url: "http://localhost:49206/api/movies",
+        type: 'DELETE',
+        success: function () {
+            return "Success";
+        },
+        data:
+        {
+            Title: title,
+            Genre: genre,
+            DirectorName: directorName
+        },
+        contentType: type
+    });
+}
