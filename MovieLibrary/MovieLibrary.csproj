@@ -216,6 +216,10 @@
     <Compile Include="Migrations\201905072033298_retry.Designer.cs">
       <DependentUpon>201905072033298_retry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905090722502_seededData.cs" />
+    <Compile Include="Migrations\201905090722502_seededData.Designer.cs">
+      <DependentUpon>201905090722502_seededData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -317,6 +321,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905072033298_retry.resx">
       <DependentUpon>201905072033298_retry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905090722502_seededData.resx">
+      <DependentUpon>201905090722502_seededData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
